@@ -9,7 +9,6 @@ public class Libro {
     private String autor;
     private String titulo;
     private String descripcion;
-    private Integer primeraEdicion;
 
     public boolean isLibroIgual(String isbn) {
         return Tool.areEquals(this.isbn, isbn);

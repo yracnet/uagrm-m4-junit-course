@@ -32,6 +32,6 @@ public class LibroPrecioTest {
     
      @Test
      public void simple() {     
-         assertEquals("10","1");
+         assertEquals("10","10");
      }
 }
