@@ -22,4 +22,11 @@ public class CarritoVentaManager {
         }
         throw new NotFounException("Libro no encontrado");
     }
+    
+    public void imprimir(){
+        for (Libro libro : libros) {
+            System.out.println(libro.getNombre());
+        }
+    }
+    
 }
