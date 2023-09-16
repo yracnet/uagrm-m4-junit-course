@@ -1,0 +1,64 @@
+{
+    "promociones": [
+        {
+            "id": 1,
+            "isbn": "1000",
+            "edicion": 2019,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2000-01-01",
+            "fechaHasta": "2000-12-31",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 2,
+            "isbn": "1000",
+            "edicion": 2005,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2000-01-01",
+            "fechaHasta": "2000-12-31",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 3,
+            "isbn": "1000",
+            "edicion": 2010,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2000-01-01",
+            "fechaHasta": "2000-12-31",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 4,
+            "isbn": "1001",
+            "edicion": 2023,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2000-01-01",
+            "fechaHasta": "2000-12-31",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 5,
+            "isbn": "1001",
+            "edicion": 2005,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2000-01-01",
+            "fechaHasta": "2000-12-31",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 6,
+            "isbn": "1001",
+            "edicion": 1989,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2000-01-01",
+            "fechaHasta": "2000-12-31",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        }
+    ]
+}

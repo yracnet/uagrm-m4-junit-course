@@ -1,0 +1,18 @@
+{
+    "libros": [
+        {
+            "isbn": "1000",
+            "titulo": "El Principito",
+            "autor": "Antoine de Saint-Exupéry",
+            "descripcion": "Viaje del Principito por asteroides. Lecciones sobre la vida.",
+            "primeraEdicion": 1943
+        },
+        {
+            "isbn": "1001",
+            "titulo": "Hábitos Atómicos",
+            "autor": "Antoine de Saint-Exupéry",
+            "descripcion": "Aprenda a desarrollar buenos hábitos y eliminar malos.",
+            "primeraEdicion": 2018
+        }
+    ]
+}

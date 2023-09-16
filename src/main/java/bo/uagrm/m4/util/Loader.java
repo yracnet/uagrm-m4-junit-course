@@ -1,85 +1,43 @@
 package bo.uagrm.m4.util;
 
-import bo.uagrm.m4.model.Descuento;
-import bo.uagrm.m4.model.Formato;
-import bo.uagrm.m4.model.Libro;
-import bo.uagrm.m4.model.PrecioLibro;
-import java.util.ArrayList;
-import java.util.List;
+import bo.uagrm.m4.access.LibroDAL;
+import bo.uagrm.m4.access.LibroPromocionDAL;
+import bo.uagrm.m4.access.LibroPrecioDAL;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.Charset;
 
 public class Loader {
-    public static List<Libro> libros(){
-        var lista = new ArrayList<Libro>();
-        
-        Libro a = new Libro();
-        a.setId(1L);
-        a.setIsbn("1000");
-        a.setNombre("El principito");
-        a.setDescripcion("Libro1");
-        a.setAutor("Antoine de Saint-Exupéry");
-       
-        Libro b = new Libro();
-        b.setId(2L);
-        b.setIsbn("1001");
-        b.setNombre("Habitos Atomicos");
-        b.setDescripcion("Libro2");
-        b.setAutor("Antoine de Saint-Exupéry");
-                
-        return lista;
+
+    private static Gson gson =  new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+
+    public static <T> T parseFile(URL url, Class<T> type, T defaultData)  {
+        try {
+            FileReader reader = new FileReader(url.getFile(), Charset.forName("utf-8"));
+            T data = gson.fromJson(reader, type);
+            return data;
+        } catch (IOException e) {
+            System.err.println("Error: " + e);
+        }
+        return defaultData;
     }
-    public static List<PrecioLibro> precios(){
-        var lista = new ArrayList<PrecioLibro>();
-        
-         PrecioLibro ap = new PrecioLibro();
-        ap.setId(1L);
-        ap.setIsbn("1000");
-        ap.setEdicion(2019);
-        ap.setFormato(Formato.TAPA_DURA);
-        ap.setDescuento(Descuento.DESC_01);
-        ap.setPrecioVenta(350D);
-        
-        PrecioLibro ap2 = new PrecioLibro();
-        ap2.setId(2L);
-        ap2.setIsbn("1000");
-        ap2.setEdicion(2005);
-        ap2.setFormato(Formato.TAPA_DURA);
-        ap2.setDescuento(Descuento.DESC_05);
-        ap2.setPrecioVenta(330D);
-        
-        PrecioLibro ap3 = new PrecioLibro();
-        ap3.setId(3L);
-        ap3.setIsbn("1000");
-        ap3.setEdicion(2010);
-        ap3.setFormato(Formato.TAPA_BLANDA);
-        ap3.setDescuento(Descuento.DESC_10);
-        ap3.setPrecioVenta(200D);
-        
-        //-------------------------------------------------
-        
-        PrecioLibro bp = new PrecioLibro();
-        bp.setId(4L);
-        bp.setIsbn("1001");
-        bp.setEdicion(2023);
-        bp.setFormato(Formato.TAPA_DURA);
-        bp.setDescuento(Descuento.DESC_01);
-        bp.setPrecioVenta(550D);
-        
-        PrecioLibro bp2 = new PrecioLibro();
-        bp2.setId(5L);
-        bp2.setIsbn("1001");
-        bp2.setEdicion(2005);
-        bp2.setFormato(Formato.TAPA_BLANDA);
-        bp2.setDescuento(Descuento.DESC_10);
-        bp2.setPrecioVenta(330D);
-        
-        PrecioLibro bp3 = new PrecioLibro();
-        bp3.setId(6L);
-        bp3.setIsbn("1001");
-        bp3.setEdicion(1989);
-        bp3.setFormato(Formato.TAPA_BLANDA);
-        bp3.setDescuento(Descuento.DESC_25);
-        bp3.setPrecioVenta(300D);
-        
-        return lista;
+
+
+    public static LibroDAL libroDAL() {
+        var input = Loader.class.getResource("/database/libro-store.json");
+        return parseFile(input,LibroDAL.class, new LibroDAL());
+    }
+
+    public static LibroPrecioDAL libroPrecioDAL() {
+        var input = Loader.class.getResource("/database/libro-precio-store.json");
+        return parseFile(input,LibroPrecioDAL.class, new LibroPrecioDAL());
+    }
+
+    public static LibroPromocionDAL libroPromocionDAL() {
+        var input = Loader.class.getResource("/database/libro-promocion-store.json");
+        return parseFile(input,LibroPromocionDAL.class, new LibroPromocionDAL());
     }
 }
