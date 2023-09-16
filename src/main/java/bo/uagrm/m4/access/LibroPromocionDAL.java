@@ -34,4 +34,8 @@ public class LibroPromocionDAL {
         return null;
     }
 
+    public int count() {
+        return promociones.size();
+    }
+
 }

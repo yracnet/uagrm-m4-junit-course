@@ -1,7 +1,6 @@
 package bo.uagrm.m4.model;
 
 import bo.uagrm.m4.util.Tool;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import lombok.Data;
 
@@ -9,6 +8,7 @@ import lombok.Data;
 public class LibroPromocion {
 
     private Long id;
+    private TipoPromocion tipo;
     private String isbn;
     private Integer edicion;
     private Formato formato;
@@ -27,7 +27,7 @@ public class LibroPromocion {
 
     public boolean isFechaValida(Date fecha) {
         var esMayor = fechaDesde.getTime() < fecha.getTime();
-        var esMenor = fechaHasta == null || fecha.getTime() <= fechaHasta.getTime();
+        var esMenor = fechaHasta == null || fecha.getTime() < fechaHasta.getTime();
         return esMayor && esMenor;
     }
 

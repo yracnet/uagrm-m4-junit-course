@@ -1,6 +1,5 @@
 package bo.uagrm.m4.access;
 
-import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import java.util.List;
 import lombok.Getter;
@@ -31,6 +30,10 @@ public class LibroDAL {
             }
         }
         return null;
+    }
+
+    public int count() {
+        return libros.size();
     }
 
 }

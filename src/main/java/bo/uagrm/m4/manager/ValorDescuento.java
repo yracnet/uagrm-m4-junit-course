@@ -1,6 +1,7 @@
 
 package bo.uagrm.m4.manager;
 
+import bo.uagrm.m4.model.TipoPromocion;
 import bo.uagrm.m4.util.Tool;
 import lombok.Data;
 
@@ -12,6 +13,7 @@ public class ValorDescuento {
     private String moneda;
     private Double precio;
     private Double descuento;
+    private TipoPromocion tipo;
     private Double total;
     private String glosa;
     
@@ -30,6 +32,7 @@ public class ValorDescuento {
         System.out.println("MONEDA    : " + moneda);
         System.out.println("PRECIO    : " + Tool.formatNumber(precio));
         System.out.println("DESCUENTO : " + Tool.formatNumber(descuento));
+        System.out.println("TIPO DESC : " + tipo);
         System.out.println("TOTAL     : " + Tool.formatNumber(total) );
         System.out.println("GLOSA     : " + glosa);
     }

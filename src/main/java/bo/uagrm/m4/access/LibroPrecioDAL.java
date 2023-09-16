@@ -1,7 +1,6 @@
 package bo.uagrm.m4.access;
 
 import bo.uagrm.m4.model.Formato;
-import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.LibroPrecio;
 import java.util.List;
 import lombok.Getter;
@@ -31,6 +30,10 @@ public class LibroPrecioDAL {
             }
         }
         return null;
+    }
+
+    public int count() {
+        return precios.size();
     }
 
 }

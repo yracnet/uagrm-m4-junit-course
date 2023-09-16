@@ -8,17 +8,17 @@ import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.LibroPrecio;
 import bo.uagrm.m4.model.LibroPromocion;
+import bo.uagrm.m4.model.TipoPromocion;
 import bo.uagrm.m4.util.Loader;
 import bo.uagrm.m4.util.Tool;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
 public class CarritoVentaManager {
 
     @Setter
-    @Getter
     private Date fechaCompra = new Date();
     private final LibroDAL libroDAL = Loader.libroDAL();
     private final LibroPrecioDAL precioDAL = Loader.libroPrecioDAL();
@@ -26,6 +26,10 @@ public class CarritoVentaManager {
 
     public void setFechaCompraString(String fecha) {
         fechaCompra = Tool.parseDate(fecha);
+    }
+
+    public String getFechaCompraString() {
+        return Tool.formatDate(fechaCompra);
     }
 
     public ValorDescuento calcularDecuento(String isbn, Integer edicion, Formato formato) {
@@ -47,9 +51,11 @@ public class CarritoVentaManager {
 
         if (promocion == null) {
             resp.initPorcentaDecuento(precio.getPrecioUnitario(), 0F);
+            resp.setTipo(null);
             resp.setGlosa("Sin descuento");
         } else {
             resp.initPorcentaDecuento(precio.getPrecioUnitario(), promocion.getDescuento());
+            resp.setTipo(promocion.getTipo());
             resp.setGlosa(promocion.getDescripcion());
         }
 

@@ -2,6 +2,7 @@
     "promociones": [
         {
             "id": 1,
+            "tipo": "NUEVO",
             "isbn": "1000",
             "edicion": 2019,
             "formato": "TAPA_DURA",
@@ -12,6 +13,7 @@
         },
         {
             "id": 2,
+            "tipo": "ANTIGUO",
             "isbn": "1000",
             "edicion": 2005,
             "formato": "TAPA_DURA",
@@ -22,6 +24,7 @@
         },
         {
             "id": 3,
+            "tipo": "NUEVO",
             "isbn": "1000",
             "edicion": 2010,
             "formato": "TAPA_BLANDA",
@@ -32,6 +35,7 @@
         },
         {
             "id": 4,
+            "tipo": "ANTIGUO",
             "isbn": "1001",
             "edicion": 2023,
             "formato": "TAPA_DURA",
@@ -42,6 +46,7 @@
         },
         {
             "id": 5,
+            "tipo": "NUEVO",
             "isbn": "1001",
             "edicion": 2005,
             "formato": "TAPA_BLANDA",
@@ -52,6 +57,7 @@
         },
         {
             "id": 6,
+            "tipo": "ANTIGUO",
             "isbn": "1001",
             "edicion": 1989,
             "formato": "TAPA_BLANDA",
