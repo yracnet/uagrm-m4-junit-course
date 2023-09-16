@@ -7,7 +7,13 @@ public class PrecioLibro {
     private Long id;
     private String isbn;
     private String edicion;
-    private String formato;
+    private Formato formato;
     private double precioVenta;
     private double descuento;
+    
+    
+    public static enum Formato{
+        TAPA_DURA,
+        TAPA_BLANDA
+    }
 }
