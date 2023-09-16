@@ -1,10 +1,12 @@
 package bo.uagrm.m4.manager;
 
 import bo.uagrm.m4.exception.NotFounException;
+import bo.uagrm.m4.model.Descuento;
 import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.PrecioLibro;
 import bo.uagrm.m4.util.Loader;
+import java.util.Date;
 import java.util.List;
 
 public class CarritoVentaManager {
@@ -16,7 +18,13 @@ public class CarritoVentaManager {
         for (PrecioLibro it : precios) {
             if (it.getIsbn() == isbn
                     && it.getEdicion() == edicion
-                    && it.getFormato() == formato) {                
+                    && it.getFormato() == formato) {  
+                
+                Date now = new Date();
+                
+                if(edicion == now.getYear()){
+                    return Descuento.DESC_01.cacularDescuento(it.getPrecioVenta());
+                }
                 return it.getDescuento().cacularDescuento(it.getPrecioVenta());
             }
         }
