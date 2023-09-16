@@ -1,8 +1,10 @@
 package bo.uagrm.m4.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 public class PrecioLibro {
 
     private Long id;
@@ -18,6 +20,7 @@ public class PrecioLibro {
     }
 
     public static enum Descuento {
+        DESC_00(0),
         DESC_01(0.01),
         DESC_05(0.05),
         DESC_10(0.1),
