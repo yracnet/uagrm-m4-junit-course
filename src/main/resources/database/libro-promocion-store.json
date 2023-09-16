@@ -8,7 +8,7 @@
             "fechaDesde": "2000-01-01",
             "fechaHasta": "2000-12-31",
             "descuento": 0.01,
-            "descripcion": "Descuento Inicial"
+            "descripcion": "Descuento por nueva sucursal"
         },
         {
             "id": 2,

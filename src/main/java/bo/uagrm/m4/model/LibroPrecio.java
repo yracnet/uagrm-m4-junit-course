@@ -10,6 +10,7 @@ public class LibroPrecio {
     private Integer edicion;
     private Formato formato;
     private Double precioUnitario;
+    private String moneda;
 
     public boolean isLibroIgual(String isbn, Integer edicion, Formato formato) {
         return Tool.areEquals(this.isbn, isbn)

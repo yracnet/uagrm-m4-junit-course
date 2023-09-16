@@ -4,37 +4,43 @@
             "isbn": "1000",
             "edicion": 2019,
             "formato": "TAPA_DURA",
-            "precioUnitario": 350.0
+            "precioUnitario": 350.0,
+            "moneda": "USD"
         },
         {
             "isbn": "1000",
             "edicion": 2005,
             "formato": "TAPA_DURA",
-            "precioUnitario": 330.0
+            "precioUnitario": 330.0,
+            "moneda": "USD"
         },
         {
             "isbn": "1000",
             "edicion": 2010,
             "formato": "TAPA_BLANDA",
-            "precioUnitario": 200.0
+            "precioUnitario": 200.0,
+            "moneda": "USD"
         },
         {
             "isbn": "1001",
             "edicion": 2023,
             "formato": "TAPA_DURA",
-            "precioUnitario": 550.0
+            "precioUnitario": 550.0,
+            "moneda": "USD"
         },
         {
             "isbn": "1001",
             "edicion": 2005,
             "formato": "TAPA_BLANDA",
-            "precioUnitario": 330.0
+            "precioUnitario": 330.0,
+            "moneda": "USD"
         },
         {
             "isbn": "1001",
             "edicion": 1989,
             "formato": "TAPA_BLANDA",
-            "precioUnitario": 300.0
+            "precioUnitario": 300.0,
+            "moneda": "BOB"
         }
     ]
 }

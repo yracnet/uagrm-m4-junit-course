@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 public class LibroPromocion {
 
-    private final static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     private Long id;
     private String isbn;
     private Integer edicion;
@@ -19,11 +18,11 @@ public class LibroPromocion {
     private String descripcion;
 
     public String getFechaDesdeString() {
-        return formatter.format(fechaDesde);
+        return Tool.formatDate(fechaDesde);
     }
 
     public String getFechaHastaString() {
-        return formatter.format(fechaHasta);
+        return Tool.formatDate(fechaHasta);
     }
 
     public boolean isFechaValida(Date fecha) {
