@@ -1,13 +1,13 @@
 package bo.uagrm.m4.model;
 
 public class Libro {
-    private int id;
+    private Long id;
     private String isbn;
     private String autor;
     private String nombre;
     private String descripcion;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -27,7 +27,7 @@ public class Libro {
         return nombre;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
