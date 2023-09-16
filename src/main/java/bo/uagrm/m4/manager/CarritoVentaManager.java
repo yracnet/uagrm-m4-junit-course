@@ -12,7 +12,7 @@ public class CarritoVentaManager {
     private List<Libro> libros = Loader.libros();
     private List<PrecioLibro> precios = Loader.precios();
 
-    public Double calcularDecuento(String isbn, String edicion, Formato formato) {
+    public Double calcularDecuento(String isbn, Integer edicion, Formato formato) {
         for (PrecioLibro it : precios) {
             if (it.getIsbn() == isbn
                     && it.getEdicion() == edicion

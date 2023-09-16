@@ -4,7 +4,7 @@ public class PrecioLibro {
 
     private int id;
     private String isbn;
-    private String edicion;
+    private Integer edicion;
     private Formato formato;
     private double precioVenta;
 
@@ -24,11 +24,11 @@ public class PrecioLibro {
         this.isbn = isbn;
     }
 
-    public String getEdicion() {
+    public Integer getEdicion() {
         return edicion;
     }
 
-    public void setEdicion(String edicion) {
+    public void setEdicion(Integer edicion) {
         this.edicion = edicion;
     }
 
