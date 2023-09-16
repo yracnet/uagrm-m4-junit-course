@@ -6,7 +6,8 @@ public class PrecioLibro {
     private String isbn;
     private Integer edicion;
     private Formato formato;
-    private double precioVenta;
+    private Double precioVenta;
+    private Descuento descuento;
 
     public int getId() {
         return id;
@@ -40,11 +41,11 @@ public class PrecioLibro {
         this.formato = formato;
     }
 
-    public double getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(double precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
@@ -55,6 +56,5 @@ public class PrecioLibro {
     public void setDescuento(Descuento descuento) {
         this.descuento = descuento;
     }
-    private Descuento descuento;
 
 }

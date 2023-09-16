@@ -36,7 +36,7 @@ public class Loader {
         ap.setEdicion(2019);
         ap.setFormato(Formato.TAPA_DURA);
         ap.setDescuento(Descuento.DESC_01);
-        ap.setPrecioVenta(350);
+        ap.setPrecioVenta(350D);
         
         PrecioLibro ap2 = new PrecioLibro();
         ap2.setId(2L);
@@ -44,7 +44,7 @@ public class Loader {
         ap2.setEdicion(2005);
         ap2.setFormato(Formato.TAPA_DURA);
         ap2.setDescuento(Descuento.DESC_05);
-        ap2.setPrecioVenta(330);
+        ap2.setPrecioVenta(330D);
         
         PrecioLibro ap3 = new PrecioLibro();
         ap3.setId(3L);
@@ -52,7 +52,7 @@ public class Loader {
         ap3.setEdicion(2010);
         ap3.setFormato(Formato.TAPA_BLANDA);
         ap3.setDescuento(Descuento.DESC_10);
-        ap3.setPrecioVenta(200);
+        ap3.setPrecioVenta(200D);
         
         //-------------------------------------------------
         
@@ -62,7 +62,7 @@ public class Loader {
         bp.setEdicion(2023);
         bp.setFormato(Formato.TAPA_DURA);
         bp.setDescuento(Descuento.DESC_01);
-        bp.setPrecioVenta(550);
+        bp.setPrecioVenta(550D);
         
         PrecioLibro bp2 = new PrecioLibro();
         bp2.setId(5L);
@@ -70,7 +70,7 @@ public class Loader {
         bp2.setEdicion(2005);
         bp2.setFormato(Formato.TAPA_BLANDA);
         bp2.setDescuento(Descuento.DESC_10);
-        bp2.setPrecioVenta(330);
+        bp2.setPrecioVenta(330D);
         
         PrecioLibro bp3 = new PrecioLibro();
         bp3.setId(6L);
@@ -78,7 +78,7 @@ public class Loader {
         bp3.setEdicion(1989);
         bp3.setFormato(Formato.TAPA_BLANDA);
         bp3.setDescuento(Descuento.DESC_25);
-        bp3.setPrecioVenta(300);
+        bp3.setPrecioVenta(300D);
         
         return lista;
     }

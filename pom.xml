@@ -15,8 +15,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
             <version>1.18.4</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -53,6 +53,49 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
+            <!--
+            <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>exec-maven-plugin</artifactId>
+               <version>3.0.0</version>
+               <executions>
+                   <execution>
+                       <id>open-report</id>
+                       <phase>post-integration-test</phase>
+                       <goals>
+                           <goal>exec</goal>
+                       </goals>
+                       <configuration>
+                           <executable>firefox</executable> 
+                           <arguments>
+                               <argument>target/site/surefire-report.html</argument> 
+                           </arguments>
+                       </configuration>
+                   </execution>
+               </executions>
+           </plugin>
+           -->
+            <!--
+            <plugin>
+                <groupId>com.hiskasoft.maven</groupId>
+                <artifactId>hiska-maven-plugin</artifactId>
+                <version>1.0.3</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skipLicence>false</skipLicence>
+                    <skipFormat>false</skipFormat>
+                    <skipAnalyzer>false</skipAnalyzer>
+                    
+                </configuration>
+            </plugin>
+            -->
         </plugins>
     </build>
 </project>
