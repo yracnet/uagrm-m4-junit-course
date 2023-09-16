@@ -59,7 +59,7 @@ public class Loader {
         bp.setIsbn("1001");
         bp.setEdicion("2023");
         bp.setFormato(PrecioLibro.Formato.TAPA_DURA);
-        bp.setDescuento(PrecioLibro.Descuento.DESC_01);
+        bp.setDescuento(PrecioLibro.Descuento.DESC_00);
         bp.setPrecioVenta(550);
         
         PrecioLibro bp2 = new PrecioLibro();
