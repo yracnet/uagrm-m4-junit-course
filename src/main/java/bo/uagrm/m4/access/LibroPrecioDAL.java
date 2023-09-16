@@ -16,9 +16,10 @@ public class LibroPrecioDAL {
     public void imprimir() {
         System.out.println("PRECIOS");
         System.out.println("-------------------------------------");
-        System.out.println("ISBN | EDICION | FORMATO    | PRECIO ");
+        String template = "%-6s | %-10s | %-15s | %-10s | %-10s";
+        System.out.println(String.format(template, new Object[]{"ISBN", "EDICION", "FORMATO", "PRECIO", "MONEDA"}));
         for (LibroPrecio precio : precios) {
-            System.out.println(precio.getIsbn() + " | " + precio.getEdicion() + "    | " + precio.getFormato() + "  | " + precio.getPrecioUnitario());
+        System.out.println(String.format(template, new Object[]{precio.getIsbn(), precio.getEdicion(), precio.getFormato(), precio.getPrecioUnitario(), precio.getMoneda()}));
         }
     }
 

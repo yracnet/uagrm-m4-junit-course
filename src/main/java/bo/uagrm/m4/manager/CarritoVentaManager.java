@@ -24,7 +24,7 @@ public class CarritoVentaManager {
     private final LibroPrecioDAL precioDAL = Loader.libroPrecioDAL();
     private final LibroPromocionDAL promocionDAL = Loader.libroPromocionDAL();
 
-    public void setFechaCompra(String fecha) {
+    public void setFechaCompraString(String fecha) {
         fechaCompra = Tool.parseDate(fecha);
     }
 

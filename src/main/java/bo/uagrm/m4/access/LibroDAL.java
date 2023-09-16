@@ -15,9 +15,10 @@ public class LibroDAL {
     public void imprimir() {
         System.out.println("LIBROS");
         System.out.println("-------------------------------------");
-        System.out.println("ISBN | TITULO");
+        String template = "%-6s | %-30s | %-30s";
+        System.out.println(String.format(template, new Object[]{"ISBN", "TITULO", "AUTOR"}));
         for (Libro libro : libros) {
-            System.out.println(libro.getIsbn()+" | " + libro.getTitulo());
+            System.out.println(String.format(template, new Object[]{libro.getIsbn(), libro.getTitulo(), libro.getAutor()}));
         }
         System.out.println("-------------------------------------");
     }
