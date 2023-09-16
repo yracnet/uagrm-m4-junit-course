@@ -1,5 +1,7 @@
 package bo.uagrm.m4.util;
 
+import bo.uagrm.m4.model.Descuento;
+import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.PrecioLibro;
 import java.util.ArrayList;
@@ -32,24 +34,24 @@ public class Loader {
         ap.setId(1);
         ap.setIsbn("1000");
         ap.setEdicion("2019");
-        ap.setFormato(PrecioLibro.Formato.TAPA_DURA);
-        ap.setDescuento(PrecioLibro.Descuento.DESC_01);
+        ap.setFormato(Formato.TAPA_DURA);
+        ap.setDescuento(Descuento.DESC_01);
         ap.setPrecioVenta(350);
         
         PrecioLibro ap2 = new PrecioLibro();
         ap2.setId(2);
         ap2.setIsbn("1000");
         ap2.setEdicion("2005");
-        ap2.setFormato(PrecioLibro.Formato.TAPA_DURA);
-        ap2.setDescuento(PrecioLibro.Descuento.DESC_05);
+        ap2.setFormato(Formato.TAPA_DURA);
+        ap2.setDescuento(Descuento.DESC_05);
         ap2.setPrecioVenta(330);
         
         PrecioLibro ap3 = new PrecioLibro();
         ap3.setId(3);
         ap3.setIsbn("1000");
         ap3.setEdicion("2010");
-        ap3.setFormato(PrecioLibro.Formato.TAPA_BLANDA);
-        ap3.setDescuento(PrecioLibro.Descuento.DESC_10);
+        ap3.setFormato(Formato.TAPA_BLANDA);
+        ap3.setDescuento(Descuento.DESC_10);
         ap3.setPrecioVenta(200);
         
         //-------------------------------------------------
@@ -58,24 +60,24 @@ public class Loader {
         bp.setId(4);
         bp.setIsbn("1001");
         bp.setEdicion("2023");
-        bp.setFormato(PrecioLibro.Formato.TAPA_DURA);
-        bp.setDescuento(PrecioLibro.Descuento.DESC_01);
+        bp.setFormato(Formato.TAPA_DURA);
+        bp.setDescuento(Descuento.DESC_01);
         bp.setPrecioVenta(550);
         
         PrecioLibro bp2 = new PrecioLibro();
         bp2.setId(5);
         bp2.setIsbn("1001");
         bp2.setEdicion("2005");
-        bp2.setFormato(PrecioLibro.Formato.TAPA_BLANDA);
-        bp2.setDescuento(PrecioLibro.Descuento.DESC_10);
+        bp2.setFormato(Formato.TAPA_BLANDA);
+        bp2.setDescuento(Descuento.DESC_10);
         bp2.setPrecioVenta(330);
         
         PrecioLibro bp3 = new PrecioLibro();
         bp3.setId(6);
         bp3.setIsbn("1001");
         bp3.setEdicion("1989");
-        bp3.setFormato(PrecioLibro.Formato.TAPA_BLANDA);
-        bp3.setDescuento(PrecioLibro.Descuento.DESC_25);
+        bp3.setFormato(Formato.TAPA_BLANDA);
+        bp3.setDescuento(Descuento.DESC_25);
         bp3.setPrecioVenta(300);
         
         return lista;
