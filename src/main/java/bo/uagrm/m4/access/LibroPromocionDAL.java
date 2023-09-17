@@ -2,6 +2,7 @@ package bo.uagrm.m4.access;
 
 import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.LibroPromocion;
+import bo.uagrm.m4.model.TipoPromocion;
 import java.util.Date;
 import java.util.List;
 import lombok.Getter;
@@ -22,11 +23,11 @@ public class LibroPromocionDAL {
             System.out.println(String.format(template, new Object[]{it.getIsbn(), it.getEdicion(), it.getFormato(), it.getFechaDesdeString(), it.getFechaHastaString(), it.getDescuento(), it.getTipo(), it.getDescripcion()}));
         }
     }
-
-    public LibroPromocion buscarPromocion(Date fecha, String isbn, Integer edicion, Formato formato) {
+    
+    public LibroPromocion buscarPromocion(Date fecha, String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         for (var it : promociones) {
             var sw = it.isFechaValida(fecha)
-                    && it.isLibroIgual(isbn, edicion, formato);
+                    && it.existeLibroPromo(isbn, edicion, formato, tipo);
             if (sw) {
                 return it;
             }

@@ -33,7 +33,7 @@ public class DatosSmokeTest {
          
          assertEquals(libroCount,2);
          assertEquals(libroCount,2);
-         assertEquals(precioCount,6);
-         assertEquals(promocionCount,6);
+         assertEquals(precioCount,9);
+         assertEquals(promocionCount,11);
      }
 }

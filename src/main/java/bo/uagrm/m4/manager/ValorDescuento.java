@@ -13,14 +13,15 @@ public class ValorDescuento {
     private String moneda;
     private Double precio;
     private Double descuento;
+    private Integer edicion;
     private TipoPromocion tipo;
     private Double total;
     private String glosa;
     
-    public void initPorcentaDecuento(Double precio, Float porcentaje){
-            this.precio = precio;
-            this.descuento = precio * porcentaje;
-            this.total = precio - this.descuento;
+    public void initPorcentajeDescuento(Double precio, Float porcentaje){
+        this.precio = precio;
+        this.descuento = Tool.roundToTwoDecimals(precio * porcentaje);
+        this.total = Tool.roundToTwoDecimals(precio - this.descuento);
     }
 
     public void imprimir() {
@@ -28,6 +29,7 @@ public class ValorDescuento {
         System.out.println("-------------------------------------");
         System.out.println("ISBN      : " + isbn);
         System.out.println("TITULO    : " + titulo);
+        System.out.println("EDICION   : " + edicion);
         System.out.println("AUTOR     : " + autor);
         System.out.println("MONEDA    : " + moneda);
         System.out.println("PRECIO    : " + Tool.formatNumber(precio));
