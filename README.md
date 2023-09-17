@@ -98,6 +98,84 @@ Las pruebas unitarias se aplicarán al método **calcularDescuento** para verifi
 - Desde el 01 de enero de 2023 hasta el 29 de febrero de 2024, hay un descuento del 2% en un libro debido a la edición 2023 (Libro nuevo).
 - A partir del 01 de marzo de 2024, hay un descuento del 10% en un libro debido a la edición 2023 (Libro antiguo, ya que salió la edición 2024).
 
+### Configuraciones
+
+- Adicione las siguientes dependencias al proyecto:
+
+  ```xml
+  <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.6.0</version>
+      <scope>test</scope>
+  </dependency>
+  <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>5.6.0</version>
+      <scope>test</scope>
+  </dependency>
+  <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.6.0</version>
+      <scope>test</scope>
+  </dependency>
+  ```
+
+  > **NOTA**
+  > Estas dependencias pertenecen a JUnit 5.
+
+- Adicione las siguientes plugins al proyecto:
+
+  ```xml
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.0.0</version>
+  </plugin>
+  <plugin>
+      <groupId>com.hiskasoft.maven</groupId>
+      <artifactId>hiska-maven-plugin</artifactId>
+      <version>1.0.3</version>
+      <executions>
+          <execution>
+              <phase>process-resources</phase>
+              <goals>
+                  <goal>process</goal>
+              </goals>
+          </execution>
+      </executions>
+      <configuration>
+          <skipLicence>false</skipLicence>
+          <skipFormat>false</skipFormat>
+          <skipAnalyzer>false</skipAnalyzer>
+      </configuration>
+  </plugin>
+  ```
+
+  > **NOTA**
+  > maven-surefire-plugin: Ejecuta y Genera las Pruebas Unitarias.
+  > hiska-maven-plugin: Formatea, Licencia y Analiza el Codigo del Proyecto
+
+### Ejecucion
+
+Ejecute el siguiente comando para ejecutar las pruebas unitarias:
+
+```bash
+mvn clean test
+```
+
+> **NOTA**
+> Este comando ejecuta las pruebas unitarias de forma global.
+
+```bash
+mvn surefire-report:report
+```
+
+> **NOTA**
+> Este comando genera el reporte de pruebas unitarios en formato HTML.
+
 ## Definiciones
 
 - **ISBN**: Número de identificación internacional asignado a los libros.
