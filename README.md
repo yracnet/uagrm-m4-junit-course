@@ -100,81 +100,85 @@ Las pruebas unitarias se aplicarán al método **calcularDescuento** para verifi
 
 ### Configuraciones
 
-- Adicione las siguientes dependencias al proyecto:
+#### Dependencias
 
-  ```xml
-  <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>5.6.0</version>
-      <scope>test</scope>
-  </dependency>
-  <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <version>5.6.0</version>
-      <scope>test</scope>
-  </dependency>
-  <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.6.0</version>
-      <scope>test</scope>
-  </dependency>
-  ```
+Añade las siguientes dependencias a tu proyecto en el archivo `pom.xml`:
 
-  > **NOTA**
-  > Estas dependencias pertenecen a JUnit 5.
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.6.0</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>5.6.0</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.6.0</version>
+    <scope>test</scope>
+</dependency>
+```
 
-- Adicione las siguientes plugins al proyecto:
+> **NOTA**: Estas dependencias pertenecen a JUnit 5.
 
-  ```xml
-  <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.0.0</version>
-  </plugin>
-  <plugin>
-      <groupId>com.hiskasoft.maven</groupId>
-      <artifactId>hiska-maven-plugin</artifactId>
-      <version>1.0.3</version>
-      <executions>
-          <execution>
-              <phase>process-resources</phase>
-              <goals>
-                  <goal>process</goal>
-              </goals>
-          </execution>
-      </executions>
-      <configuration>
-          <skipLicence>false</skipLicence>
-          <skipFormat>false</skipFormat>
-          <skipAnalyzer>false</skipAnalyzer>
-      </configuration>
-  </plugin>
-  ```
+#### Plugins
 
-  > **NOTA**
-  > maven-surefire-plugin: Ejecuta y Genera las Pruebas Unitarias.
-  > hiska-maven-plugin: Formatea, Licencia y Analiza el Codigo del Proyecto
+Añade los siguientes plugins a tu proyecto en el archivo `pom.xml`:
 
-### Ejecucion
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0</version>
+</plugin>
+<plugin>
+    <groupId>com.hiskasoft.maven</groupId>
+    <artifactId>hiska-maven-plugin</artifactId>
+    <version>1.0.3</version>
+    <executions>
+        <execution>
+            <phase>process-resources</phase>
+            <goals>
+                <goal>process</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <skipLicence>false</skipLicence>
+        <skipFormat>false</skipFormat>
+        <skipAnalyzer>false</skipAnalyzer>
+    </configuration>
+</plugin>
+```
 
-Ejecute el siguiente comando para ejecutar las pruebas unitarias:
+> **NOTA**:
+>
+> - `maven-surefire-plugin`: Ejecuta y genera las pruebas unitarias.
+> - `hiska-maven-plugin`: Formatea, agrega licencia y analiza el código del proyecto.
+
+### Ejecución
+
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
 
 ```bash
 mvn clean test
 ```
 
-> **NOTA**
-> Este comando ejecuta las pruebas unitarias de forma global.
+> **NOTA**: Este comando ejecuta las pruebas unitarias en todo el proyecto.
+
+Para generar un informe de pruebas unitarias en formato HTML, ejecuta el siguiente comando:
 
 ```bash
 mvn surefire-report:report
 ```
 
-> **NOTA**
-> Este comando genera el reporte de pruebas unitarios en formato HTML.
+> **NOTA**: Este comando genera un informe de pruebas unitarias en formato HTML.
 
 ## Definiciones
 
