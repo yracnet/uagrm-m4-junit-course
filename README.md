@@ -86,21 +86,21 @@ El proyecto incluye una clase llamada `CarritoCompraManager`, que permite calcul
 
 ## Pruebas Unitarias
 
-La pruebas Unitarias se aplicaran sobre el metodo **calcularDescuento**, verificando que retorne el precio de un libro con el descuento valido para los casos:
+Las pruebas unitarias se aplicarán al método **calcularDescuento** para verificar que devuelva el precio de un libro con el descuento válido en los siguientes casos:
 
-- Cuando sea un **Libro Nuevo**. (Cuando el descuento sea por libro nuevo)
-- Cuando sea un **Libro Antiguo**. (Cuando el descuento sea por una edicion antigua)
-- Cuando sea por un **Precio Diferente**. (Cuando el libro tenga una formato diferente).
+- Cuando sea un **Libro Nuevo** (cuando el descuento sea por libro nuevo).
+- Cuando sea un **Libro Antiguo** (cuando el descuento sea por una edición antigua).
+- Cuando sea por un **Precio Diferente** (cuando el libro tenga un formato diferente).
 
 **Ejemplos**:
 
-- Desde el 01/Sep/2023 hasta el 30/Sep/2023, hay un descuento del 5% en un libro por el mes aniversario de la biblioteca.
-- Desde el 01/Ene/2023 hasta el 29/Feb/2024, hay un descuento del 2% en un libro debido a la edición 2023 (Libro nuevo).
-- A partir del 01/Mar/2024, hay un descuento del 10% en un libro debido a la edición 2023 (Libro antiguo, ya que salió la edición 2024).
+- Desde el 01 de septiembre de 2023 hasta el 30 de septiembre de 2023, hay un descuento del 5% en un libro por el mes aniversario de la biblioteca.
+- Desde el 01 de enero de 2023 hasta el 29 de febrero de 2024, hay un descuento del 2% en un libro debido a la edición 2023 (Libro nuevo).
+- A partir del 01 de marzo de 2024, hay un descuento del 10% en un libro debido a la edición 2023 (Libro antiguo, ya que salió la edición 2024).
 
 ## Definiciones
 
-- **ISBN**: Número de identificación internacional asignado a los libros
+- **ISBN**: Número de identificación internacional asignado a los libros.
 - **EDICIÓN**: Una publicación periódica/anual del libro original, con cambios y actualizaciones.
 - **FORMATO**: Presentación del libro, considerando solo los formatos TAPA DURA y TAPA BLANDA.
-- **PROMOCIONES**: Descuentos validos entre fechas, para un determinado libro.
+- **PROMOCIONES**: Descuentos válidos entre fechas para un determinado libro.
