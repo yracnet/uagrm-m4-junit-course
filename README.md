@@ -1,65 +1,59 @@
-# JUnit Tutorial
+# Tutorial de JUnit
 
-URL: https://github.com/yracnet/uagrm-m4-junit-course
+URL del proyecto: [https://github.com/yracnet/uagrm-m4-junit-course](https://github.com/yracnet/uagrm-m4-junit-course)
 
-## Requerimentos
+## Requisitos
 
-Este proyecto requiere el siguiente entorno configurado en Linux o Windows.
+Este proyecto requiere la configuración del siguiente entorno en Linux o Windows:
 
-- **Netbeans 16** _o Superior_
-- **JDK 11** _o Superior_
-- **Maven 3.8.X** _o Superior_
-- **GIT 2.39.x** _o Superior_
+- **NetBeans 16** o superior
+- **JDK 11** o superior
+- **Maven 3.8.X** o superior
+- **GIT 2.39.x** o superior
 
 ## Ramas
 
-El proyecto cuenta con las siguientes ramas:
+El proyecto tiene las siguientes ramas:
 
 - **main**: Rama principal
 - **p1-init**: Rama inicial, donde se encuentra el proyecto sin pruebas unitarias
-- **p2-test**: Rema pruebas, donde se encuentra el proyecto con pruebas unitarias
+- **p2-test**: Rama de pruebas, donde se encuentra el proyecto con pruebas unitarias
 
 ## Instalación
 
-Ejecute el comando
+Ejecute el siguiente comando para construir el proyecto:
 
-```
-mvn clean build
+```bash
+mvn clean install
 ```
 
 > **NOTA**
-> Este comando instalara las dependencias necesarias del proyecto, requiere **internet**.
+> Este comando instalará las dependencias necesarias del proyecto. Se requiere una conexión a Internet.
 
 ## Proyecto Biblioteca
 
 ### Objetivo
 
-El proyecto es una implementacion de una biblioteca para la venta de libros nuevo o antiguos, donde:
+Este proyecto es una implementación de una biblioteca para la venta de libros nuevos y antiguos. Incluye:
 
-- Se tiene un catalogo de libros, un conjunto de precios del libro segun la **edicion** y el **formato**.
+- Un catálogo de libros segun ISBN.
+- Precios del libro según la edición y el formato.
+- Ventas de libros con promociones (descuentos) aplicados a ejemplares de libros en un rango de fechas.
 
-  - **Edicion**: Una publicacion periodica/anual del libro original, con cambio y actualizaciones.
-  - **Formato**: Presentacion del libro, para este proyecto se considera solo los formasto TAPA DURA y TAPA BLANDA
+### Descripción
 
-- La venta de libros puede realizar con promociones (descuentos) aplicados a un ejemplar de un libro (edicion y formato) el cual es un procentaje y es valido entre fechas.
-
-  - Desde el **01/Sep/2023** hasta **30/Sep/2023**, se tiene un descuento a un libro del 5% por el mes aniversario de la biblioteca.
-  - Desde el **01/Ene/2023** hasta **29/Feb/2024**, se tiene un descuento a un libro del 2% por ser edicion 2023 **(Libro nuevo)**
-  - A partir del 01/Mar/2024, se tiene un descuento a un libro del 10% por ser edicion 2023 **(Libro antiguo por que ya salio la edicion 2024)**
-
-### Descripcion
-
-El proyecto cuento con los archivos **libro-store.json**, **libro-precio-store.json** y **libro-promocion-store.json** los cuales alamacen la informacion de libros, precion y promociones.
+El proyecto incluye los archivos **libro-store.json**, **libro-precio-store.json** y **libro-promocion-store.json**, que almacenan la información de libros, precios y promociones.
 
 ### Diseño
 
-Se tiene la siguiente tabla para los libros (**libro-store.json**)
-| ISBN | Título | Autor | Descripción |
-|-------|-----------------|--------------------------|-------------------------------------------------|
-| 1000 | El Principito | Antoine de Saint-Exupéry | Viaje del Principito por asteroides. Lecciones sobre la vida. |
-| 1001 | Hábitos Atómicos | Antoine de Saint-Exupéry | Aprenda a desarrollar buenos hábitos y eliminar malos. |
+#### Tabla de Libros (**libro-store.json**)
 
-Se tiene la siguiente tabla para los precios (**libro-precio-store.json** )
+| ISBN | Título           | Autor                    | Descripción                                                   |
+| ---- | ---------------- | ------------------------ | ------------------------------------------------------------- |
+| 1000 | El Principito    | Antoine de Saint-Exupéry | Viaje del Principito por asteroides. Lecciones sobre la vida. |
+| 1001 | Hábitos Atómicos | Antoine de Saint-Exupéry | Aprenda a desarrollar buenos hábitos y eliminar malos.        |
+
+#### Tabla de Precios (**libro-precio-store.json**)
 
 | ISBN | Edición | Formato     | Precio Unitario | Moneda |
 | ---- | ------- | ----------- | --------------- | ------ |
@@ -70,9 +64,9 @@ Se tiene la siguiente tabla para los precios (**libro-precio-store.json** )
 | 1001 | 2005    | TAPA_BLANDA | 330.0           | USD    |
 | 1001 | 1989    | TAPA_BLANDA | 300.0           | BOB    |
 
-Se tiene la siguiente tabla para las promociones (**libro-promocion-store.json** )
+#### Tabla de Promociones (**libro-promocion-store.json**)
 
-| id  | tipo    | isbn | edicion | formato     | fechaDesde | fechaHasta | descuento | descripcion                  |
+| id  | tipo    | isbn | edición | formato     | fechaDesde | fechaHasta | descuento | descripción                  |
 | --- | ------- | ---- | ------- | ----------- | ---------- | ---------- | --------- | ---------------------------- |
 | 1   | NUEVO   | 1000 | 2019    | TAPA_DURA   | 2000-01-01 | 2000-12-31 | 0.01      | Descuento por nueva sucursal |
 | 2   | ANTIGUO | 1000 | 2005    | TAPA_DURA   | 2000-01-01 | 2000-12-31 | 0.01      | Descuento Inicial            |
@@ -83,11 +77,30 @@ Se tiene la siguiente tabla para las promociones (**libro-promocion-store.json**
 
 ### Servicio
 
-Se tiene una clase llamada CarritoCompraManager, que permite **calcularDecuento** de un libro por el **ISBN**, **EDICION** y **FORMATO**, el cual:
+El proyecto incluye una clase llamada `CarritoCompraManager`, que permite calcular descuentos (**calcularDecuento**) en un libro según el **ISBN**, **EDICIÓN** y **FORMATO**. Realiza lo siguiente:
 
-- Buscara el libro por el ISBN
-- Buscara el precio por el ISBN, EDICION y FORMATO
-- Buscara el decuento por la FECHA de compra
-- Retornara el **ValorDescuento** del Libro
+- Busca el libro por el ISBN.
+- Busca el precio por el ISBN, EDICIÓN y FORMATO.
+- Busca el descuento por la FECHA de compra.
+- Retorna el **Valor de Descuento** del libro.
 
 ## Pruebas Unitarias
+
+La pruebas Unitarias se aplicaran sobre el metodo **calcularDescuento**, verificando que retorne el precio de un libro con el descuento valido para los casos:
+
+- Cuando sea un **Libro Nuevo**. (Cuando el descuento sea por libro nuevo)
+- Cuando sea un **Libro Antiguo**. (Cuando el descuento sea por una edicion antigua)
+- Cuando sea por un **Precio Diferente**. (Cuando el libro tenga una formato diferente).
+
+**Ejemplos**:
+
+- Desde el 01/Sep/2023 hasta el 30/Sep/2023, hay un descuento del 5% en un libro por el mes aniversario de la biblioteca.
+- Desde el 01/Ene/2023 hasta el 29/Feb/2024, hay un descuento del 2% en un libro debido a la edición 2023 (Libro nuevo).
+- A partir del 01/Mar/2024, hay un descuento del 10% en un libro debido a la edición 2023 (Libro antiguo, ya que salió la edición 2024).
+
+## Definiciones
+
+- **ISBN**: Número de identificación internacional asignado a los libros
+- **EDICIÓN**: Una publicación periódica/anual del libro original, con cambios y actualizaciones.
+- **FORMATO**: Presentación del libro, considerando solo los formatos TAPA DURA y TAPA BLANDA.
+- **PROMOCIONES**: Descuentos validos entre fechas, para un determinado libro.
