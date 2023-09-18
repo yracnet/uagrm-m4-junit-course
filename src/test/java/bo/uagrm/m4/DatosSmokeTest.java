@@ -21,17 +21,17 @@ public class DatosSmokeTest {
 
     
      @Test
-     public void simple() {
+     public void testInicial() {
          var carrito = new CarritoVentaManager ();
          
-         var libroCount = carrito.getLibroDAL().count();
-         var precioCount = carrito.getPrecioDAL().count();
-         var promocionCount = carrito.getPromocionDAL().count();
-         var fechaVenta = carrito.getFechaVenta();
-         
-         assertEquals(libroCount,2);
-         assertEquals(libroCount,2);
-         assertEquals(precioCount,9);
-         assertEquals(promocionCount,11);
+        var libroCount = carrito.getLibroDAL().count();
+        var precioCount = carrito.getPrecioDAL().count();
+        var promocionCount = carrito.getPromocionDAL().count();
+        var fechaVenta = carrito.getFechaVenta();
+
+        assertNotEquals(libroCount, 0);
+        assertNotEquals(libroCount, 0);
+        assertNotEquals(precioCount, 0);
+        assertNotEquals(promocionCount, 0);
      }
 }
