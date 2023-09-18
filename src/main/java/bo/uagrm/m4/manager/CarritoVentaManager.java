@@ -19,17 +19,17 @@ import lombok.Setter;
 public class CarritoVentaManager {
 
     @Setter
-    private Date fechaCompra = new Date();
+    private Date fechaVenta = new Date();
     private final LibroDAL libroDAL = Loader.libroDAL();
     private final LibroPrecioDAL precioDAL = Loader.libroPrecioDAL();
     private final LibroPromocionDAL promocionDAL = Loader.libroPromocionDAL();
 
-    public void setFechaCompraString(String fecha) {
-        fechaCompra = Tool.parseDate(fecha);
+    public void setFechaVentaString(String fecha) {
+        fechaVenta = Tool.parseDate(fecha);
     }
 
-    public String getFechaCompraString() {
-        return Tool.formatDate(fechaCompra);
+    public String getFechaVentaString() {
+        return Tool.formatDate(fechaVenta);
     }
 
     public ValorDescuento calcularDescuento(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
@@ -41,8 +41,8 @@ public class CarritoVentaManager {
         if (precio == null) {
             throw new NotFoundException("Precio Libro no encontrado");
         }
-        System.out.println("fechaCompra = " + fechaCompra);
-        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaCompra, isbn, edicion, formato, tipo);
+        System.out.println("fechaVenta = " + fechaVenta);
+        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaVenta, isbn, edicion, formato, tipo);
 
         var resp = new ValorDescuento();
         resp.setIsbn(libro.getIsbn());
@@ -69,6 +69,4 @@ public class CarritoVentaManager {
         precioDAL.imprimir();
         promocionDAL.imprimir();
     }
-
-
 }

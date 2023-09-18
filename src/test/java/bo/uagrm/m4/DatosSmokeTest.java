@@ -2,9 +2,7 @@ package bo.uagrm.m4;
 
 import bo.uagrm.m4.manager.CarritoVentaManager;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,7 +27,7 @@ public class DatosSmokeTest {
          var libroCount = carrito.getLibroDAL().count();
          var precioCount = carrito.getPrecioDAL().count();
          var promocionCount = carrito.getPromocionDAL().count();
-         var fechaCompra = carrito.getFechaCompra();
+         var fechaVenta = carrito.getFechaVenta();
          
          assertEquals(libroCount,2);
          assertEquals(libroCount,2);

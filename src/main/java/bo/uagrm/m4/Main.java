@@ -10,7 +10,7 @@ public class Main {
         
         CarritoVentaManager carrito = new CarritoVentaManager();
         carrito.imprimir();
-        carrito.setFechaCompraString("2023-02-07");
+        carrito.setFechaVentaString("2023-02-07");
         System.out.println(">> 1000, 2010, TAPA_DURA, NUEVO" );
         var resp = carrito.calcularDescuento("1000", 2010, Formato.TAPA_DURA, TipoPromocion.NUEVO);
         resp.imprimir();

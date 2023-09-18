@@ -1,4 +1,3 @@
-
 package bo.uagrm.m4.manager;
 
 import bo.uagrm.m4.model.TipoPromocion;
