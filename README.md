@@ -86,11 +86,11 @@ El proyecto incluye los archivos **libro-store.json**, **libro-precio-store.json
 
 ### Servicio
 
-El proyecto incluye una clase llamada `CarritoCompraManager`, que permite calcular descuentos (**calcularDecuento**) en un libro según el **ISBN**, **EDICIÓN** y **FORMATO**. Realiza lo siguiente:
+El proyecto incluye una clase llamada `CarritoVentaManager`, que permite calcular descuentos (**calcularDecuento**) en un libro según el **ISBN**, **EDICIÓN**, **FORMATO** y **TIPO**. Realiza lo siguiente:
 
 - Busca el libro por el ISBN.
-- Busca el precio por el ISBN, EDICIÓN y FORMATO.
-- Busca el descuento por la FECHA de compra.
+- Busca el precio por el ISBN, EDICIÓN, FORMATO y TIPO.
+- Busca el descuento por la FECHA de venta.
 - Retorna el **Valor de Descuento** del libro.
 
 ## Pruebas Unitarias
@@ -194,4 +194,5 @@ mvn surefire-report:report
 - **ISBN**: Número de identificación internacional asignado a los libros.
 - **EDICIÓN**: Una publicación periódica/anual del libro original, con cambios y actualizaciones.
 - **FORMATO**: Presentación del libro, considerando solo los formatos TAPA DURA y TAPA BLANDA.
+- **TIPO**: Tipo de Promocion, libro NUEVO o libro ANTIGUO.
 - **PROMOCIONES**: Descuentos válidos entre fechas para un determinado libro.
