@@ -8,7 +8,6 @@ import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.LibroPrecio;
 import bo.uagrm.m4.model.LibroPromocion;
-import bo.uagrm.m4.model.TipoPromocion;
 import bo.uagrm.m4.util.Loader;
 import bo.uagrm.m4.util.Tool;
 import java.util.Date;
@@ -19,17 +18,17 @@ import lombok.Setter;
 public class CarritoVentaManager {
 
     @Setter
-    private Date fechaCompra = new Date();
+    private Date fechaVenta = new Date();
     private final LibroDAL libroDAL = Loader.libroDAL();
     private final LibroPrecioDAL precioDAL = Loader.libroPrecioDAL();
     private final LibroPromocionDAL promocionDAL = Loader.libroPromocionDAL();
 
-    public void setFechaCompraString(String fecha) {
-        fechaCompra = Tool.parseDate(fecha);
+    public void setFechaVentaString(String fecha) {
+        fechaVenta = Tool.parseDate(fecha);
     }
 
-    public String getFechaCompraString() {
-        return Tool.formatDate(fechaCompra);
+    public String getFechaVentaString() {
+        return Tool.formatDate(fechaVenta);
     }
 
     public ValorDescuento calcularDecuento(String isbn, Integer edicion, Formato formato) {
@@ -41,7 +40,7 @@ public class CarritoVentaManager {
         if (precio == null) {
             throw new NotFounException("Precio Libro no encontrado");
         }
-        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaCompra, isbn, edicion, formato);
+        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaVenta, isbn, edicion, formato);
 
         var resp = new ValorDescuento();
         resp.setIsbn(libro.getIsbn());
@@ -67,6 +66,5 @@ public class CarritoVentaManager {
         precioDAL.imprimir();
         promocionDAL.imprimir();
     }
-
 
 }
