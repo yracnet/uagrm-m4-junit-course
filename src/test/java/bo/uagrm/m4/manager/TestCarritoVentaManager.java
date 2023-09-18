@@ -18,9 +18,9 @@ public class TestCarritoVentaManager {
         Integer edicion = 2019;
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.NUEVO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         Double expResult = 346.50;
         ValorDescuento respValorDescuento = instance.calcularDescuento(isbn, edicion, formato, tipo);
         Double result = respValorDescuento.getTotal();
@@ -35,9 +35,9 @@ public class TestCarritoVentaManager {
         Integer edicion = 2019;
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.NUEVO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         NotFoundException assertThrows = assertThrows(NotFoundException.class, () -> {
             instance.calcularDescuento(null, edicion, formato, tipo);
@@ -51,9 +51,9 @@ public class TestCarritoVentaManager {
         String isbn = "1000";
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.NUEVO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         NotFoundException assertThrows = assertThrows(NotFoundException.class, () -> {
             instance.calcularDescuento(isbn, null, formato, tipo);
@@ -67,9 +67,9 @@ public class TestCarritoVentaManager {
         String isbn = "1000";
         Integer edicion = 2019;
         TipoPromocion tipo = TipoPromocion.NUEVO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         NotFoundException assertThrows = assertThrows(NotFoundException.class, () -> {
             instance.calcularDescuento(isbn, edicion, null, tipo);
@@ -84,9 +84,9 @@ public class TestCarritoVentaManager {
         Integer edicion = 2019;
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.NUEVO;
-        String fechaCompra = "2023-06-27";
+        String fechaVenta = "2023-06-27";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         Double expResult = 350.0;
         ValorDescuento respValorDescuento = instance.calcularDescuento(isbn, edicion, formato, tipo);
         Double result = respValorDescuento.getTotal();
@@ -103,9 +103,9 @@ public class TestCarritoVentaManager {
         Integer edicion = 2019;
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.ANTIGUO;
-        String fechaCompra = "2023-06-27";
+        String fechaVenta = "2023-06-27";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         Double expResult = 315.0;
         ValorDescuento respValorDescuento = instance.calcularDescuento(isbn, edicion, formato, tipo);
         Double result = respValorDescuento.getTotal();
@@ -121,9 +121,9 @@ public class TestCarritoVentaManager {
         Integer edicion = 2019;
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.ANTIGUO;
-        String fechaCompra = "2023-06-05";
+        String fechaVenta = "2023-06-05";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         Double expResult = 350.0;
         ValorDescuento respValorDescuento = instance.calcularDescuento(isbn, edicion, formato, tipo);
         Double result = respValorDescuento.getTotal();
@@ -138,9 +138,9 @@ public class TestCarritoVentaManager {
         Integer edicion = 2019;
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.ANTIGUO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         NotFoundException assertThrows = assertThrows(NotFoundException.class, () -> {
             instance.calcularDescuento(null, edicion, formato, tipo);
@@ -154,9 +154,9 @@ public class TestCarritoVentaManager {
         String isbn = "1000";
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.ANTIGUO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         NotFoundException assertThrows = assertThrows(NotFoundException.class, () -> {
             instance.calcularDescuento(isbn, null, formato, tipo);
@@ -170,9 +170,9 @@ public class TestCarritoVentaManager {
         String isbn = "1000";
         Integer edicion = 2019;
         TipoPromocion tipo = TipoPromocion.ANTIGUO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         NotFoundException assertThrows = assertThrows(NotFoundException.class, () -> {
             instance.calcularDescuento(isbn, edicion, null, tipo);
@@ -192,9 +192,9 @@ public class TestCarritoVentaManager {
         TipoPromocion tipo1 = TipoPromocion.NUEVO;
         TipoPromocion tipo2 = TipoPromocion.ANTIGUO;
         
-        String fechaCompra = "2023-07-07";
+        String fechaVenta = "2023-07-07";
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         ValorDescuento respValorDescuento1 = instance.calcularDescuento(isbn, edicion, formato, tipo1);
         ValorDescuento respValorDescuento2 = instance.calcularDescuento(isbn, edicion, formato, tipo2);
@@ -214,12 +214,12 @@ public class TestCarritoVentaManager {
         String isbn = "1000";
         Formato formato = Formato.TAPA_DURA;
         TipoPromocion tipo = TipoPromocion.NUEVO;
-        String fechaCompra = "2023-02-07";
+        String fechaVenta = "2023-02-07";
         Integer edicion1 = 2010;
         Integer edicion2 = 2019;
         
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         ValorDescuento respValorDescuento1 = instance.calcularDescuento(isbn, edicion1, formato, tipo);
         ValorDescuento respValorDescuento2 = instance.calcularDescuento(isbn, edicion2, formato, tipo);
@@ -240,10 +240,10 @@ public class TestCarritoVentaManager {
         TipoPromocion tipo = TipoPromocion.ANTIGUO;
         Formato formato1 = Formato.TAPA_DURA;
         Formato formato2 = Formato.TAPA_BLANDA;
-        String fechaCompra = "2023-07-07";
+        String fechaVenta = "2023-07-07";
         
         CarritoVentaManager instance = new CarritoVentaManager();
-        instance.setFechaCompraString(fechaCompra);
+        instance.setFechaVentaString(fechaVenta);
         
         ValorDescuento respValorDescuento1 = instance.calcularDescuento(isbn, edicion, formato1, tipo);
         ValorDescuento respValorDescuento2 = instance.calcularDescuento(isbn, edicion, formato2, tipo);
