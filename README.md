@@ -1,4 +1,13 @@
-# Tutorial de JUnit
+# Módulo : Pruebas de Software
+
+## Grupo 2
+
+## Integrantes
+
+- Alejandra Murillo
+- Willyams Yujra
+ 
+## Tutorial de JUnit
 
 URL del proyecto: [https://github.com/yracnet/uagrm-m4-junit-course](https://github.com/yracnet/uagrm-m4-junit-course)
 
