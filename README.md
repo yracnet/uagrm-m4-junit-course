@@ -128,25 +128,25 @@ BEGIN testCalcularDescuentoLibroNuevo
 
     //definimos los valores a utilizar en la prueba
     var edicion = 2019;
-    var formato = Formato.TAPA_DURA;
+    var formato = "TAPA_DURA";
     var isbn = "1000";
-    var tipoPromo = TipoPromocion.NUEVO;
+    var tipoPromo = "NUEVO";
 
     //definimos el valor esperado
     var expResult = 346.50;
 
     //invocamos al metodo calcularDescuento
-    var respValorDescuento = instance.calcularDescuento(isbn, edicion, formato, tipo);
+    var respValorDescuento = instancia.calcularDescuento(isbn, edicion, formato, tipo);
 
     //obtenemos el valor total a pagar (valor obtenido)
     var result = respValorDescuento.getTotal();
 
     //evaluamos la igualdad entre el valor obtenido contra el valor esperado
-    asertarIgualdad(expResult, result);
+    verificarIgualdad(expResult, result);
 
     //imprimimos los valores para visualizar
-    print("Valor esperado = " + expResult);
-    print("valor obtenido = " + result + "\n");
+    print("Valor esperado = ", expResult);
+    print("valor obtenido = ", result);
 END
 ```
 
