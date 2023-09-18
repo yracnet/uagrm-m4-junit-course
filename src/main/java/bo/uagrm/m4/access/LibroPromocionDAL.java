@@ -18,12 +18,9 @@ public class LibroPromocionDAL {
         System.out.println("PROMOCIONES");
         System.out.println("-------------------------------------");
         String template = "%-6s | %-10s | %-15s | %-10s | %-10s | %-10s | %-30s";
-        System.out.println(String.format(template,
-                new Object[] { "ISBN", "EDICION", "FORMATO", "DESDE", "HASTA", "DESCUENTO", "TIPO" }));
+        System.out.println(String.format(template, new Object[]{"ISBN", "EDICION", "FORMATO", "DESDE", "HASTA", "DESCUENTO", "TIPO"}));
         for (LibroPromocion it : promociones) {
-            System.out.println(String.format(template,
-                    new Object[] { it.getIsbn(), it.getEdicion(), it.getFormato(), it.getFechaDesdeString(),
-                            it.getFechaHastaString(), it.getDescuento(), it.getTipo() }));
+            System.out.println(String.format(template, new Object[]{it.getIsbn(), it.getEdicion(), it.getFormato(), it.getFechaDesdeString(), it.getFechaHastaString(), it.getDescuento(), it.getTipo()}));
         }
     }
 
