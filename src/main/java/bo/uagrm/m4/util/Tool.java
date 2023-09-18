@@ -1,5 +1,8 @@
 package bo.uagrm.m4.util;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,5 +33,11 @@ public class Tool {
 
     public static String formatNumber(Number numero, int decimales) {
         return String.format("%." + decimales + "f", numero);
+    }
+    
+    public static Double roundToTwoDecimals(double number){
+        BigDecimal bd = new BigDecimal(number);
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 }

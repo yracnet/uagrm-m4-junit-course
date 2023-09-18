@@ -3,7 +3,7 @@ package bo.uagrm.m4.manager;
 import bo.uagrm.m4.access.LibroDAL;
 import bo.uagrm.m4.access.LibroPrecioDAL;
 import bo.uagrm.m4.access.LibroPromocionDAL;
-import bo.uagrm.m4.exception.NotFounException;
+import bo.uagrm.m4.exception.NotFoundException;
 import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.LibroPrecio;
@@ -32,31 +32,33 @@ public class CarritoVentaManager {
         return Tool.formatDate(fechaCompra);
     }
 
-    public ValorDescuento calcularDecuento(String isbn, Integer edicion, Formato formato) {
+    public ValorDescuento calcularDescuento(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         Libro libro = libroDAL.buscarLibro(isbn);
         if (libro == null) {
-            throw new NotFounException("Libro no encontrado");
+            throw new NotFoundException("Libro no encontrado");
         }
         LibroPrecio precio = precioDAL.buscarPrecio(isbn, edicion, formato);
         if (precio == null) {
-            throw new NotFounException("Precio Libro no encontrado");
+            throw new NotFoundException("Precio Libro no encontrado");
         }
-        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaCompra, isbn, edicion, formato);
+        System.out.println("fechaCompra = " + fechaCompra);
+        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaCompra, isbn, edicion, formato, tipo);
 
         var resp = new ValorDescuento();
         resp.setIsbn(libro.getIsbn());
         resp.setTitulo(libro.getTitulo());
+        resp.setEdicion(precio.getEdicion());
         resp.setAutor(libro.getAutor());
         resp.setMoneda(precio.getMoneda());
 
         if (promocion == null) {
-            resp.initPorcentaDecuento(precio.getPrecioUnitario(), 0F);
+            resp.initPorcentajeDescuento(precio.getPrecioUnitario(), 0F);
             resp.setTipo(null);
             resp.setGlosa("Sin descuento");
         } else {
-            resp.initPorcentaDecuento(precio.getPrecioUnitario(), promocion.getDescuento());
+            resp.initPorcentajeDescuento(precio.getPrecioUnitario(), promocion.getDescuento());
             resp.setTipo(promocion.getTipo());
-            resp.setGlosa(promocion.getDescripcion());
+            resp.setGlosa("Descuento por Libro " + promocion.getTipo());
         }
 
         return resp;
