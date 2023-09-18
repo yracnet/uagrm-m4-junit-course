@@ -8,6 +8,7 @@ import bo.uagrm.m4.model.Formato;
 import bo.uagrm.m4.model.Libro;
 import bo.uagrm.m4.model.LibroPrecio;
 import bo.uagrm.m4.model.LibroPromocion;
+import bo.uagrm.m4.model.TipoPromocion;
 import bo.uagrm.m4.util.Loader;
 import bo.uagrm.m4.util.Tool;
 import java.util.Date;
@@ -31,7 +32,7 @@ public class CarritoVentaManager {
         return Tool.formatDate(fechaVenta);
     }
 
-    public ValorDescuento calcularDecuento(String isbn, Integer edicion, Formato formato) {
+    public ValorDescuento calcularDecuento(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         Libro libro = libroDAL.buscarLibro(isbn);
         if (libro == null) {
             throw new NotFounException("Libro no encontrado");
@@ -40,7 +41,7 @@ public class CarritoVentaManager {
         if (precio == null) {
             throw new NotFounException("Precio Libro no encontrado");
         }
-        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaVenta, isbn, edicion, formato);
+        LibroPromocion promocion = promocionDAL.buscarPromocion(fechaVenta, isbn, edicion, formato, tipo);
 
         var resp = new ValorDescuento();
         resp.setIsbn(libro.getIsbn());
@@ -55,7 +56,7 @@ public class CarritoVentaManager {
         } else {
             resp.initPorcentaDecuento(precio.getPrecioUnitario(), promocion.getDescuento());
             resp.setTipo(promocion.getTipo());
-            resp.setGlosa(promocion.getDescripcion());
+            resp.setGlosa("Descuento por Libro " + promocion.getTipo());
         }
 
         return resp;
