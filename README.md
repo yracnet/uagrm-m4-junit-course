@@ -92,13 +92,13 @@ El proyecto incluye los archivos **libro-store.json**, **libro-precio-store.json
 | 10  | ANTIGUO | 1001 | 2001    | TAPA_DURA   | 2023-06-05 | 2023-12-15 | 0.10          |
 | 11  | ANTIGUO | 1001 | 2001    | TAPA_BLANDA | 2023-06-05 | 2023-12-15 | 0.15          |
 
-### Servicio
+### Metodo Principal: Calcular Descuento 
 
 El proyecto incluye una clase llamada `CarritoVentaManager`, que permite calcular descuentos (**calcularDecuento**) en un libro según el **ISBN**, **EDICIÓN**, **FORMATO** y **TIPO**. Realiza lo siguiente:
 
 - Busca el libro por el ISBN.
-- Busca el precio por el ISBN, EDICIÓN, FORMATO y TIPO.
-- Busca el descuento por la FECHA de venta.
+- Busca el precio por el ISBN, EDICIÓN y FORMATO.
+- Busca el descuento por la ISBN, EDICIÓN, FORMATO, TIPO y FECHA de venta.
 - Retorna el **Valor de Descuento** del libro.
 
 ## Pruebas Unitarias
