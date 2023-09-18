@@ -1,0 +1,125 @@
+{
+    "promociones": [
+        {
+            "id": 1,
+            "tipo": "NUEVO",
+            "isbn": "1000",
+            "edicion": 2019,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2023-01-17",
+            "fechaHasta": "2023-06-17",
+            "descuento": 0.01,
+            "descripcion": "Descuento por nueva sucursal"
+        },
+        {
+            "id": 2,
+            "tipo": "ANTIGUO",
+            "isbn": "1000",
+            "edicion": 2005,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2023-06-18",
+            "fechaHasta": "2023-12-31",
+            "descuento": 0.10,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 3,
+            "tipo": "NUEVO",
+            "isbn": "1000",
+            "edicion": 2010,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2023-01-01",
+            "fechaHasta": "2023-03-30",
+            "descuento": 0.01,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 4,
+            "tipo": "NUEVO",
+            "isbn": "1000",
+            "edicion": 2010,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2023-01-01",
+            "fechaHasta": "2023-12-30",
+            "descuento": 0.5,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 5,
+            "tipo": "ANTIGUO",
+            "isbn": "1000",
+            "edicion": 2019,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2023-06-17",
+            "fechaHasta": "2023-12-31",
+            "descuento": 0.10,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 6,
+            "tipo": "ANTIGUO",
+            "isbn": "1001",
+            "edicion": 2003,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2023-01-01",
+            "fechaHasta": "2023-12-31",
+            "descuento": 0.25,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 7,
+            "tipo": "NUEVO",
+            "isbn": "1001",
+            "edicion": 2022,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2023-01-01",
+            "fechaHasta": "2023-12-31",
+            "descuento": 0.15,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 8,
+            "tipo": "ANTIGUO",
+            "isbn": "1001",
+            "edicion": 1989,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2023-06-05",
+            "fechaHasta": "2023-12-15",
+            "descuento": 0.30,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 9,
+            "tipo": "NUEVO",
+            "isbn": "1001",
+            "edicion": 1989,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2023-06-05",
+            "fechaHasta": "2023-12-15",
+            "descuento": 0.05,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 10,
+            "tipo": "ANTIGUO",
+            "isbn": "1001",
+            "edicion": 2001,
+            "formato": "TAPA_DURA",
+            "fechaDesde": "2023-06-05",
+            "fechaHasta": "2023-12-15",
+            "descuento": 0.10,
+            "descripcion": "Descuento Inicial"
+        },
+        {
+            "id": 11,
+            "tipo": "ANTIGUO",
+            "isbn": "1001",
+            "edicion": 2001,
+            "formato": "TAPA_BLANDA",
+            "fechaDesde": "2023-06-05",
+            "fechaHasta": "2023-12-15",
+            "descuento": 0.15,
+            "descripcion": "Descuento Inicial"
+        }
+    ]
+}

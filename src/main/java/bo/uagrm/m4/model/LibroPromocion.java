@@ -15,7 +15,6 @@ public class LibroPromocion {
     private Date fechaDesde;
     private Date fechaHasta;
     private Float descuento;
-    private String descripcion;
 
     public String getFechaDesdeString() {
         return Tool.formatDate(fechaDesde);

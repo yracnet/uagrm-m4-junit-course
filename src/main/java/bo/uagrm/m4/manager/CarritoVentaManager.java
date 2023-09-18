@@ -58,7 +58,7 @@ public class CarritoVentaManager {
         } else {
             resp.initPorcentajeDescuento(precio.getPrecioUnitario(), promocion.getDescuento());
             resp.setTipo(promocion.getTipo());
-            resp.setGlosa(promocion.getDescripcion());
+            resp.setGlosa("Descuento por Libro " + promocion.getTipo());
         }
 
         return resp;
