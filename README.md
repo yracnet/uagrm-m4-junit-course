@@ -6,7 +6,7 @@
 
 - Alejandra Murillo
 - Willyams Yujra
- 
+
 ## Tutorial de JUnit
 
 URL del proyecto: [https://github.com/yracnet/uagrm-m4-junit-course](https://github.com/yracnet/uagrm-m4-junit-course)
@@ -92,7 +92,7 @@ El proyecto incluye los archivos **libro-store.json**, **libro-precio-store.json
 | 10  | ANTIGUO | 1001 | 2001    | TAPA_DURA   | 2023-06-05 | 2023-12-15 | 0.10          |
 | 11  | ANTIGUO | 1001 | 2001    | TAPA_BLANDA | 2023-06-05 | 2023-12-15 | 0.15          |
 
-### Metodo Principal: Calcular Descuento 
+### Metodo Principal: Calcular Descuento
 
 El proyecto incluye una clase llamada `CarritoVentaManager`, que permite calcular descuentos (**calcularDecuento**) en un libro según el **ISBN**, **EDICIÓN**, **FORMATO** y **TIPO**. Realiza lo siguiente:
 
@@ -114,6 +114,41 @@ Las pruebas unitarias se aplicarán al método **calcularDescuento** para verifi
 - Desde el 01 de septiembre de 2023 hasta el 30 de septiembre de 2023, hay un descuento del 5% en un libro por el mes aniversario de la biblioteca.
 - Desde el 01 de enero de 2023 hasta el 29 de febrero de 2024, hay un descuento del 2% en un libro debido a la edición 2023 (Libro nuevo).
 - A partir del 01 de marzo de 2024, hay un descuento del 10% en un libro debido a la edición 2023 (Libro antiguo, ya que salió la edición 2024).
+
+### Pseudo-Codigo de las Pruebas
+
+```java
+// Pseudo-Codigo para un Libro Nuevo
+BEGIN testCalcularDescuentoLibroNuevo
+    // Crear instancia de la clase CarritoVentaManager
+    var instancia = new CarritoVentaManager();
+
+    // definir fecha de Venta para la venta de libros
+    instancia.setFechaVenta("2023-02-07");
+
+    //definimos los valores a utilizar en la prueba
+    var edicion = 2019;
+    var formato = Formato.TAPA_DURA;
+    var isbn = "1000";
+    var tipoPromo = TipoPromocion.NUEVO;
+
+    //definimos el valor esperado
+    var expResult = 346.50;
+
+    //invocamos al metodo calcularDescuento
+    var respValorDescuento = instance.calcularDescuento(isbn, edicion, formato, tipo);
+
+    //obtenemos el valor total a pagar (valor obtenido)
+    var result = respValorDescuento.getTotal();
+
+    //evaluamos la igualdad entre el valor obtenido contra el valor esperado
+    asertarIgualdad(expResult, result);
+
+    //imprimimos los valores para visualizar
+    print("Valor esperado = " + expResult);
+    print("valor obtenido = " + result + "\n");
+END
+```
 
 ### Configuraciones
 
