@@ -10,7 +10,7 @@ public class Main {
         carrito.imprimir();
         carrito.setFechaVentaString("2000-02-07");
         System.out.println(">> 1000, 2010, TAPA_DURA, NUEVO" );
-        var resp = carrito.calcularDecuento("1000", 2019, Formato.TAPA_DURA, TipoPromocion.NUEVO);
+        var resp = carrito.calcularDescuento("1000", 2019, Formato.TAPA_DURA, TipoPromocion.NUEVO);
         resp.imprimir();
     }
     

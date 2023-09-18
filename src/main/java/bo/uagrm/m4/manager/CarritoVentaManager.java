@@ -32,7 +32,7 @@ public class CarritoVentaManager {
         return Tool.formatDate(fechaVenta);
     }
 
-    public ValorDescuento calcularDecuento(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
+    public ValorDescuento calcularDescuento(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         Libro libro = libroDAL.buscarLibro(isbn);
         if (libro == null) {
             throw new NotFounException("Libro no encontrado");
@@ -41,6 +41,7 @@ public class CarritoVentaManager {
         if (precio == null) {
             throw new NotFounException("Precio Libro no encontrado");
         }
+        System.out.println("fechaVenta = " + fechaVenta);
         LibroPromocion promocion = promocionDAL.buscarPromocion(fechaVenta, isbn, edicion, formato, tipo);
 
         var resp = new ValorDescuento();
@@ -67,5 +68,4 @@ public class CarritoVentaManager {
         precioDAL.imprimir();
         promocionDAL.imprimir();
     }
-
 }

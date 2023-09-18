@@ -30,7 +30,7 @@ public class LibroPromocion {
         return esMayor && esMenor;
     }
 
-    public boolean isLibroIgual(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
+    public boolean existeLibroPromo(String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         return Tool.areEquals(this.isbn, isbn)
                 && Tool.areEquals(this.edicion, edicion)
                 && Tool.areEquals(this.formato, formato)

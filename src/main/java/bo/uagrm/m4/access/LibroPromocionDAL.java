@@ -30,7 +30,7 @@ public class LibroPromocionDAL {
     public LibroPromocion buscarPromocion(Date fecha, String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         for (var it : promociones) {
             var sw = it.isFechaValida(fecha)
-                    && it.isLibroIgual(isbn, edicion, formato, tipo);
+                    && it.existeLibroPromo(isbn, edicion, formato, tipo);
             if (sw) {
                 return it;
             }
