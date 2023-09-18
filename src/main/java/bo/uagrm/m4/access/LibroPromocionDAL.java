@@ -23,7 +23,7 @@ public class LibroPromocionDAL {
             System.out.println(String.format(template, new Object[]{it.getIsbn(), it.getEdicion(), it.getFormato(), it.getFechaDesdeString(), it.getFechaHastaString(), it.getDescuento(), it.getTipo()}));
         }
     }
-    
+
     public LibroPromocion buscarPromocion(Date fecha, String isbn, Integer edicion, Formato formato, TipoPromocion tipo) {
         for (var it : promociones) {
             var sw = it.isFechaValida(fecha)

@@ -19,7 +19,7 @@ public class Loader {
             FileReader reader = new FileReader(url.getFile(), Charset.forName("utf-8"));
             T data = gson.fromJson(reader, type);
             return data;
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             System.err.println("Error: " + e);
         }
         return defaultData;
