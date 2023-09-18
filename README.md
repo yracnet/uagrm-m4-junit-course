@@ -60,20 +60,28 @@ El proyecto incluye los archivos **libro-store.json**, **libro-precio-store.json
 | 1000 | 2019    | TAPA_DURA   | 350.0           | USD    |
 | 1000 | 2005    | TAPA_DURA   | 330.0           | USD    |
 | 1000 | 2010    | TAPA_BLANDA | 200.0           | USD    |
+| 1000 | 2010    | TAPA_DURA   | 350.0           | USD    |
 | 1001 | 2023    | TAPA_DURA   | 550.0           | USD    |
 | 1001 | 2005    | TAPA_BLANDA | 330.0           | USD    |
 | 1001 | 1989    | TAPA_BLANDA | 300.0           | BOB    |
+| 1001 | 2001    | TAPA_DURA   | 300.0           | BOB    |
+| 1001 | 2001    | TAPA_BLANDA | 300.0           | BOB    |
 
 #### Tabla de Promociones (**libro-promocion-store.json**)
 
-| id  | tipo    | isbn | edición | formato     | fechaDesde | fechaHasta | descuento | descripción                  |
-| --- | ------- | ---- | ------- | ----------- | ---------- | ---------- | --------- | ---------------------------- |
-| 1   | NUEVO   | 1000 | 2019    | TAPA_DURA   | 2000-01-01 | 2000-12-31 | 0.01      | Descuento por nueva sucursal |
-| 2   | ANTIGUO | 1000 | 2005    | TAPA_DURA   | 2000-01-01 | 2000-12-31 | 0.01      | Descuento Inicial            |
-| 3   | NUEVO   | 1000 | 2010    | TAPA_BLANDA | 2000-01-01 | 2000-12-31 | 0.01      | Descuento Inicial            |
-| 4   | ANTIGUO | 1001 | 2023    | TAPA_DURA   | 2000-01-01 | 2000-12-31 | 0.01      | Descuento Inicial            |
-| 5   | NUEVO   | 1001 | 2005    | TAPA_BLANDA | 2000-01-01 | 2000-12-31 | 0.01      | Descuento Inicial            |
-| 6   | ANTIGUO | 1001 | 1989    | TAPA_BLANDA | 2000-01-01 | 2000-12-31 | 0.01      | Descuento Inicial            |
+| id  | tipo    | isbn | edicion | formato     | fechaDesde | fechaHasta | descuento (%) |
+| --- | ------- | ---- | ------- | ----------- | ---------- | ---------- | ------------- |
+| 1   | NUEVO   | 1000 | 2019    | TAPA_DURA   | 2023-01-17 | 2023-06-17 | 0.01          |
+| 2   | ANTIGUO | 1000 | 2005    | TAPA_DURA   | 2023-06-18 | 2023-12-31 | 0.10          |
+| 3   | NUEVO   | 1000 | 2010    | TAPA_BLANDA | 2023-01-01 | 2023-03-30 | 0.01          |
+| 4   | NUEVO   | 1000 | 2010    | TAPA_DURA   | 2023-01-01 | 2023-12-30 | 0.5           |
+| 5   | ANTIGUO | 1000 | 2019    | TAPA_DURA   | 2023-06-17 | 2023-12-31 | 0.10          |
+| 6   | ANTIGUO | 1001 | 2003    | TAPA_DURA   | 2023-01-01 | 2023-12-31 | 0.25          |
+| 7   | NUEVO   | 1001 | 2022    | TAPA_BLANDA | 2023-01-01 | 2023-12-31 | 0.15          |
+| 8   | ANTIGUO | 1001 | 1989    | TAPA_BLANDA | 2023-06-05 | 2023-12-15 | 0.30          |
+| 9   | NUEVO   | 1001 | 1989    | TAPA_BLANDA | 2023-06-05 | 2023-12-15 | 0.05          |
+| 10  | ANTIGUO | 1001 | 2001    | TAPA_DURA   | 2023-06-05 | 2023-12-15 | 0.10          |
+| 11  | ANTIGUO | 1001 | 2001    | TAPA_BLANDA | 2023-06-05 | 2023-12-15 | 0.15          |
 
 ### Servicio
 
@@ -179,6 +187,12 @@ mvn surefire-report:report
 ```
 
 > **NOTA**: Este comando genera un informe de pruebas unitarias en formato HTML.
+
+### Screenshots
+
+![Surefire Report](/screenshots/img01.png)
+![Summary Report](/screenshots/img02.png)
+![Test Report](/screenshots/img03.png)
 
 ## Definiciones
 
